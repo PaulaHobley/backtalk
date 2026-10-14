@@ -442,6 +442,36 @@ If you develop a game, add this `<meta-data>` element inside your `<application>
     android:value="true" />
 ```
 
+### Direct touch on part of the screen
+
+Some apps want raw touch in one area only, such as a player with a gesture pad. In these apps, only the marked area takes your touches directly, and the rest of the screen works with Backtalk as usual. Backtalk says "Direct touch on" when the area appears and "Direct touch off" when it goes away.
+
+If you develop such an app, add this `<meta-data>` element instead of the one above, inside your `<application>` element or your main `<activity>` element. Backtalk turns your app on the first time that it sees it, and players can still turn it off in the **Apps** list. If you add both, this one wins.
+
+```xml
+<meta-data
+    android:name="dev.nvgt.capability.DIRECT_TOUCH_REGIONS"
+    android:value="true" />
+```
+
+Then mark each view that should take touches directly by putting `dev.nvgt.DIRECT_TOUCH_REGION` in the extras of its accessibility node:
+
+```kotlin
+gesturePad.accessibilityDelegate =
+  object : View.AccessibilityDelegate() {
+    override fun onInitializeAccessibilityNodeInfo(host: View, info: AccessibilityNodeInfo) {
+      super.onInitializeAccessibilityNodeInfo(host, info)
+      info.extras.putBoolean("dev.nvgt.DIRECT_TOUCH_REGION", true)
+    }
+  }
+```
+
+Backtalk passes touches through on the screen bounds of the marked views that are visible, and follows them when your app's content changes or scrolls. Anything on top of them stays with Backtalk, including your own dialogs and popups, the keyboard, and system bars. While nothing is marked, nothing passes through. Direct touch still turns off when a text field takes focus, another app opens on top, the notification shade opens, or the screen turns off.
+
+- The marked view has to reach accessibility services, so it must be important for accessibility, for example by having a content description.
+- To mark or unmark a view that stays on screen, call `view.sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED)` afterward, so that Backtalk reads the view again. Showing or hiding the view needs nothing extra.
+- Backtalk looks through at most 500 views, 40 levels deep, so put the marked view where it can be found.
+
 ## On-screen keyboard
 
 ### Lift to type, except to send

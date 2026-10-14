@@ -26,8 +26,14 @@ data class DirectTouchInput(
   val foreignAppWindow: Boolean,
   /** The notification shade or quick settings cover at least half the screen. */
   val systemUiCoversHalf: Boolean,
+  /** Another window of the app in front is showing, such as a dialog. */
   val dialogShowing: Boolean,
   val textFieldFocused: Boolean,
+  /**
+   * The app marks its own direct touch areas, so only they take touches directly. Its other windows
+   * are cut out of the region instead of turning direct touch off.
+   */
+  val regionMode: Boolean = false,
 )
 
 object DirectTouchPolicy {
@@ -40,13 +46,16 @@ object DirectTouchPolicy {
   fun coversHalfScreen(active: Boolean, windowHeight: Int, displayHeight: Int): Boolean =
     active && windowHeight > displayHeight / 2
 
-  /** Whether touches should go straight to the app in front. */
+  /**
+   * Whether touches should go straight to the app in front. In region mode, they then go straight
+   * only to the views it marks, and direct touch is on only while it marks some.
+   */
   fun shouldBeActive(input: DirectTouchInput): Boolean =
     input.masterEnabled &&
       input.appEnabled &&
       input.screenInteractive &&
       !input.foreignAppWindow &&
       !input.systemUiCoversHalf &&
-      !input.dialogShowing &&
+      (input.regionMode || !input.dialogShowing) &&
       !input.textFieldFocused
 }

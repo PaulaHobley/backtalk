@@ -24,12 +24,25 @@ import org.json.JSONObject
 
 /**
  * Settings for direct touch: which apps get raw touch, and how Backtalk reports changes. Apps that
- * declare [CAPABILITY_KEY] are turned on the first time they are seen, and after that the user's
- * choice is kept.
+ * declare [CAPABILITY_KEY] or [REGIONS_CAPABILITY_KEY] are turned on the first time they are seen,
+ * and after that the user's choice is kept.
  */
 object DirectTouchSettings {
-  /** Manifest meta-data key a game sets to ask for direct touch. */
+  /** Manifest meta-data key a game sets to ask for direct touch on the whole screen. */
   const val CAPABILITY_KEY = "dev.nvgt.capability.DIRECT_TOUCH"
+
+  /**
+   * Manifest meta-data key an app sets to ask for direct touch only on the views it marks with
+   * [REGION_EXTRA_KEY]. The rest of the screen stays with explore by touch. When an app sets both
+   * keys, this one wins.
+   */
+  const val REGIONS_CAPABILITY_KEY = "dev.nvgt.capability.DIRECT_TOUCH_REGIONS"
+
+  /**
+   * Boolean extra in a view's AccessibilityNodeInfo that marks the view as a direct touch area, in
+   * an app that sets [REGIONS_CAPABILITY_KEY].
+   */
+  const val REGION_EXTRA_KEY = "dev.nvgt.DIRECT_TOUCH_REGION"
 
   const val PREF_MASTER = "pref_direct_touch_master"
   const val PREF_SPEECH = "pref_direct_touch_speech"
