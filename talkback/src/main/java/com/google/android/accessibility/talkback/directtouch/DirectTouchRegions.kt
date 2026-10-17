@@ -89,56 +89,6 @@ object DirectTouchRegions {
     eventType == AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED ||
       eventType == AccessibilityEvent.TYPE_VIEW_SCROLLED
 
-  /** How [findMarked] reads a tree of views, so that it can be tested without a device. */
-  interface Tree<N> {
-    fun childCount(node: N): Int
-
-    fun child(node: N, index: Int): N?
-
-    fun isVisible(node: N): Boolean
-
-    /** Whether the app marked the view as a direct touch area. */
-    fun isMarked(node: N): Boolean
-  }
-
-  /**
-   * The visible views under [roots] that are marked as direct touch areas. A view that isn't
-   * visible hides its whole subtree, and a marked view's own subtree isn't searched, since all of it
-   * is already in the area. The search reads at most [maxNodes] views across all the roots, and goes
-   * at most [maxDepth] levels below each root, because every child it reads can be a call into the
-   * app's process on the main thread, and an app with a huge tree must not stall Backtalk. Marked
-   * views beyond the limits are left out, and their touches stay with Backtalk.
-   */
-  fun <N : Any> findMarked(roots: List<N>, tree: Tree<N>, maxNodes: Int, maxDepth: Int): List<N> {
-    val marked = mutableListOf<N>()
-    var visited = 0
-    for (root in roots) {
-      val stack = ArrayDeque<Pair<N, Int>>()
-      stack.addLast(root to 0)
-      while (stack.isNotEmpty()) {
-        if (visited >= maxNodes) {
-          return marked
-        }
-        val (node, depth) = stack.removeLast()
-        visited++
-        if (!tree.isVisible(node)) {
-          continue
-        }
-        if (tree.isMarked(node)) {
-          marked += node
-          continue
-        }
-        if (depth < maxDepth) {
-          // Pushed last to first, so that views are read in order.
-          for (index in tree.childCount(node) - 1 downTo 0) {
-            tree.child(node, index)?.let { stack.addLast(it to depth + 1) }
-          }
-        }
-      }
-    }
-    return marked
-  }
-
   /** A window on screen, as far as working out which parts of marked views can be touched. */
   data class LayeredWindow(
     val id: Int,

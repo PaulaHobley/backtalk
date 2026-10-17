@@ -33,16 +33,18 @@ object DirectTouchSettings {
 
   /**
    * Manifest meta-data key an app sets to ask for direct touch only on the views it marks with
-   * [REGION_EXTRA_KEY]. The rest of the screen stays with explore by touch. When an app sets both
+   * [REGION_VIEW_ID]. The rest of the screen stays with explore by touch. When an app sets both
    * keys, this one wins.
    */
   const val REGIONS_CAPABILITY_KEY = "dev.nvgt.capability.DIRECT_TOUCH_REGIONS"
 
   /**
-   * Boolean extra in a view's AccessibilityNodeInfo that marks the view as a direct touch area, in
-   * an app that sets [REGIONS_CAPABILITY_KEY].
+   * The name of the view ID resource that marks a view as a direct touch area, in an app that sets
+   * [REGIONS_CAPABILITY_KEY]. Backtalk asks the app for its views with the ID
+   * `<package>:id/dev_nvgt_direct_touch_region`, which the app answers by searching its own views,
+   * so Backtalk never walks the app's tree. Several views can share it.
    */
-  const val REGION_EXTRA_KEY = "dev.nvgt.DIRECT_TOUCH_REGION"
+  const val REGION_VIEW_ID = "dev_nvgt_direct_touch_region"
 
   const val PREF_MASTER = "pref_direct_touch_master"
   const val PREF_SPEECH = "pref_direct_touch_speech"
@@ -106,6 +108,9 @@ object DirectTouchSettings {
   fun setDirectTyping(prefs: SharedPreferences, pkg: String, enabled: Boolean) {
     prefs.edit().putBoolean(PREF_TYPING_PREFIX + pkg, enabled).apply()
   }
+
+  /** Whether [pkg] has been seen, after which [onFirstSight] changes nothing for it. */
+  fun isSeen(prefs: SharedPreferences, pkg: String): Boolean = pkg in stringSet(prefs, PREF_SEEN)
 
   /**
    * Records that [pkg] has been seen. The first time, an app that [declaresCapability] is turned
