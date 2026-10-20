@@ -22,7 +22,6 @@
   </plurals>
   <string name="sound_theme_control_sounds_on">Включает звуки и вибрации элементов управления.</string>
   <string name="sound_theme_control_sounds_off">Отключает звуки и вибрации элементов управления.</string>
-  <string name="sound_theme_use">Использовать эту тему</string>
   <string name="sound_theme_about">Об этой теме</string>
   <string name="sound_theme_export">Сохранить в файл темы</string>
   <string name="sound_theme_remove">Удалить</string>

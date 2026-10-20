@@ -132,14 +132,6 @@ class SoundThemeSettingsFragment : TalkbackBaseFragment() {
         SoundThemeActions.open(this, ThemeSoundsFragment::class.java)
       }
     )
-    if (!inUse) {
-      screen.addPreference(
-        action(context, getString(R.string.sound_theme_use), null) {
-          SoundThemes.activate(context, prefs, themeId)
-          rebuild()
-        }
-      )
-    }
     screen.addPreference(
       action(context, getString(R.string.sound_theme_about), null) { showAbout(theme) }
     )

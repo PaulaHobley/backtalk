@@ -31,8 +31,6 @@
     <!-- Sound themes: said of a theme that turns control sounds and vibrations off. [CHAR LIMIT=NONE] -->
     <string name="sound_theme_control_sounds_off">Turns control sounds and vibrations off.</string>
 
-    <!-- Sound themes: choice that puts a theme in use. [CHAR LIMIT=50] -->
-    <string name="sound_theme_use">Use this theme</string>
     <!-- Sound themes: choice that tells who made a theme and what it has. [CHAR LIMIT=50] -->
     <string name="sound_theme_about">About this theme</string>
     <!-- Sound themes: choice that saves a theme as a theme file. [CHAR LIMIT=50] -->
