@@ -72,5 +72,19 @@
         <ignore regexp="theme_sound_none" />
         <ignore regexp="theme_sound_summary_no_sound" />
         <ignore regexp="theme_sound_action_set_none" />
+        <ignore regexp="title_pref_sound_scheme" />
+        <ignore regexp="title_pref_manage_sound_themes" />
+        <ignore regexp="summary_pref_manage_sound_themes" />
+        <ignore regexp="title_pref_new_sound_theme" />
+        <ignore regexp="summary_pref_new_sound_theme" />
+        <ignore regexp="new_theme_title" />
+        <ignore regexp="new_theme_name_hint" />
+        <ignore regexp="new_theme_description_hint" />
+        <ignore regexp="new_theme_author_hint" />
+        <ignore regexp="new_theme_control_sounds" />
+        <ignore regexp="new_theme_create" />
+        <ignore regexp="new_theme_exists" />
+        <ignore regexp="new_theme_needs_name" />
+        <ignore regexp="sound_theme_customisation" />
     </issue>
 </lint>
