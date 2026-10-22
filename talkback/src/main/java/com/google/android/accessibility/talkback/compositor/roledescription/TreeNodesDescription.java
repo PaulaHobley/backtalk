@@ -376,7 +376,7 @@ public class TreeNodesDescription {
       }
     }
 
-    LogUtils.v(TAG, "      treeNodesDescription:  %s", logString.toString());
+    LogUtils.v(TAG, "      treeNodesDescription:  %s", logString);
 
     CharSequence description =
         CompositorUtils.joinCharSequences(joinList, CompositorUtils.getSeparator(), PRUNE_EMPTY);
