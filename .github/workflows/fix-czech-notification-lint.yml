@@ -1,0 +1,93 @@
+name: Fix Czech notification lint
+
+on:
+  push:
+    branches: [czech-notification-list]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: czech-notification-list
+          fetch-depth: 0
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 25
+
+      - uses: gradle/actions/setup-gradle@v6
+
+      - name: Fix Czech plural and validate translation batch
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          cs_path = Path('talkback/src/main/res/values-cs/strings_notification_list.xml')
+          tree = ET.parse(cs_path)
+          names = [e.attrib['name'] for e in tree.getroot() if e.tag in ('string', 'plurals')]
+          if len(names) != 23 or len(set(names)) != 23:
+              raise SystemExit(f'Expected exactly 23 unique Czech resource keys, found {len(names)} / {len(set(names))}.')
+
+          cs = cs_path.read_text(encoding='utf-8')
+          many_line = '        <item quantity="many">%d oznámení</item>'
+          if many_line not in cs:
+              needle = '        <item quantity="few">%d oznámení</item>\n        <item quantity="other">%d oznámení</item>'
+              replacement = '        <item quantity="few">%d oznámení</item>\n' + many_line + '\n        <item quantity="other">%d oznámení</item>'
+              if cs.count(needle) != 1:
+                  raise SystemExit('Could not uniquely locate the Czech notification plural to add quantity="many".')
+              cs_path.write_text(cs.replace(needle, replacement, 1), encoding='utf-8')
+
+          ET.parse(cs_path)
+          print('Validated 23 Czech resources and ensured quantity="many" is present.')
+          PY
+
+      - name: Regenerate lint baseline with project-supported task
+        run: ./gradlew updateLintBaselinePhoneDebug --console=plain
+
+      - name: Validate generated changes
+        run: git diff --check
+
+      - name: Build debug APKs
+        run: ./gradlew assembleDebug --console=plain
+
+      - name: Run unit tests
+        run: ./gradlew testPhoneDebugUnitTest --console=plain
+
+      - name: Run lint
+        id: lint
+        continue-on-error: true
+        run: ./gradlew :lintPhoneDebug --console=plain
+
+      - name: Upload lint report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: repaired-lint-report
+          path: build/reports/lint-results-phoneDebug.html
+          if-no-files-found: error
+
+      - name: Commit verified repair and remove temporary workflow
+        if: steps.lint.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lint-baseline.xml talkback/src/main/res/values-cs/strings_notification_list.xml
+          git rm .github/workflows/fix-czech-notification-lint.yml
+          git diff --cached --check
+          git commit -m "Fix Czech notification list lint baseline"
+          git push origin HEAD:czech-notification-list
+
+      - name: Fail when lint is not clean
+        if: steps.lint.outcome != 'success'
+        run: exit 1
