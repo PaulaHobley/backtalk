@@ -188,6 +188,18 @@ class ManifestParserTest {
   }
 
   @Test
+  fun liftToActivateTakesALongPressTime() {
+    val parsed = rule("""{"id":"a","liftToActivate":true,"longPressAfter":800}""")
+    assertTrue(parsed.liftToActivate)
+    assertEquals(800, parsed.longPressAfter)
+    assertEquals(null, rule("""{"id":"a","liftToActivate":true}""").longPressAfter)
+    assertTrue("needs label" in rejectsRule("""{"id":"a","liftToActivate":false}"""))
+    assertTrue("longPressAfter is" in rejectsRule("""{"id":"a","longPressAfter":50}"""))
+    assertTrue("longPressAfter is" in rejectsRule("""{"id":"a","longPressAfter":20000}"""))
+    assertTrue("longPressAfter is" in rejectsRule("""{"id":"a","longPressAfter":"1s"}"""))
+  }
+
+  @Test
   fun anUnknownRuleFieldIsLeftOut() {
     val (rule, unsupported) = leftOut("""{"id":"a","label":"A","colour":"red"}""")
 
@@ -197,10 +209,10 @@ class ManifestParserTest {
 
   @Test
   fun aRuleWithOnlyUnknownChangesIsLeftOut() {
-    val (rule, unsupported) = leftOut("""{"id":"a","liftToActivate":true}""")
+    val (rule, unsupported) = leftOut("""{"id":"a","vibrate":true}""")
 
     assertNull(rule)
-    assertEquals(setOf("liftToActivate"), unsupported)
+    assertEquals(setOf("vibrate"), unsupported)
   }
 
   @Test
@@ -288,14 +300,14 @@ class ManifestParserTest {
   fun aManifestListsWhatItLeftOut() {
     val parsed =
       parse(
-        ""","permissions":["input"],"rules":[{"id":"a","liftToActivate":true},""" +
-          """{"id":"b","label":"B","longPressAfter":500}],""" +
+        ""","permissions":["input"],"rules":[{"id":"a","vibrate":true},""" +
+          """{"id":"b","label":"B","doubleTapAfter":500}],""" +
           """"navigation":[{"title":"Red","match":{"colour":"red"}},{"title":"Rows","id":"row"}]"""
       )
 
     assertEquals(listOf("b"), parsed.rules.map { it.id })
     assertEquals(listOf("Rows"), parsed.navigation.map { it.title })
-    assertEquals(listOf("liftToActivate", "longPressAfter", "colour"), parsed.unsupported)
+    assertEquals(listOf("vibrate", "doubleTapAfter", "colour"), parsed.unsupported)
     assertFalse(parsed.isCompatible)
   }
 

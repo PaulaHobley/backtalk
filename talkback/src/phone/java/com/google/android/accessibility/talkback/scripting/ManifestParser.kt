@@ -97,6 +97,8 @@ class ManifestParser(private val strict: Boolean) {
           readAfter = targetOf(json.opt("readAfter")),
           actions = itemActions(json.optJSONArray("actions")),
           activate = json.optJSONObject("activate")?.let { query(it) },
+          liftToActivate = json.optBoolean("liftToActivate", false),
+          longPressAfter = longPressAfterOf(json.opt("longPressAfter")),
         )
       } ?: return null
     with(rule) {
@@ -108,7 +110,7 @@ class ManifestParser(private val strict: Boolean) {
       if (!changesItem && actions.isEmpty() && leftOut > leftOutBefore) return null
       manifestCheck(changesItem || actions.isNotEmpty()) {
         "The rule for $target needs label, speak, hide, silence, role, state, hint, heading, " +
-          "group, readBefore, readAfter, activate or actions"
+          "group, readBefore, readAfter, activate, liftToActivate, longPressAfter or actions"
       }
     }
     return rule
@@ -245,6 +247,21 @@ class ManifestParser(private val strict: Boolean) {
       else -> manifestError("An item is named by an id or a match")
     }
 
+  private fun longPressAfterOf(value: Any?): Int? =
+    when (value) {
+      null,
+      JSONObject.NULL -> null
+      else ->
+        (value as? Number)
+          ?.takeIf { it.toDouble() == it.toInt().toDouble() }
+          ?.toInt()
+          ?.takeIf { it in MIN_LONG_PRESS_AFTER..MAX_LONG_PRESS_AFTER }
+          ?: manifestError(
+            "longPressAfter is a number of milliseconds from $MIN_LONG_PRESS_AFTER to " +
+              "$MAX_LONG_PRESS_AFTER"
+          )
+    }
+
   private fun hideOf(value: Any?, key: String): Hide =
     when (value) {
       null,
@@ -366,6 +383,8 @@ class ManifestParser(private val strict: Boolean) {
     const val MAX_RULE_ACTIONS = 10
     const val MAX_COMMANDS = 50
     const val MAX_NAVIGATION = 20
+    const val MIN_LONG_PRESS_AFTER = 100
+    const val MAX_LONG_PRESS_AFTER = 10_000
     val NAVIGATION_KEYS = setOf("title", "id", "match")
     val RULE_KEYS =
       setOf(
@@ -386,6 +405,8 @@ class ManifestParser(private val strict: Boolean) {
         "readAfter",
         "actions",
         "activate",
+        "liftToActivate",
+        "longPressAfter",
       )
   }
 }

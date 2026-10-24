@@ -1,6 +1,6 @@
 # Writing Backtalk scripts
 
-A script is a JavaScript file that changes how Backtalk works in one app, or in every app. This document describes the whole script API, version 4.
+A script is a JavaScript file that changes how Backtalk works in one app, or in every app. This document describes the whole script API.
 
 Scripts run on phones and tablets. Watches and TVs can't run them.
 
@@ -153,6 +153,8 @@ A rule can set any of these:
 | `readBefore`, `readAfter` | Moves the item in the reading order to just before or after another item, named by id or query. Use one, not both. |
 | `actions` | Items to add to the item's Actions menu. See below. |
 | `activate` | A [query](#queries) for the item inside it that a double-tap presses, such as the part of a grouped post that opens it. Needs build 301. |
+| `liftToActivate` | `true` activates the item when the finger lifts from it after touching it, as **Lift to activate** does, whatever that setting is. Needs build 395. |
+| `longPressAfter` | For an item with `liftToActivate`, a number of milliseconds from 100 to 10,000. Holding the finger on the item for that time long-presses it, and lifting the finger then does nothing more. Items that can't be long-pressed are left alone. Needs build 395. |
 
 When several rules match an item, the first one that sets a field wins for that field. Rules from scripts for the app come before rules from scripts for all apps, and `backtalk.rules.add` comes before the manifest.
 
