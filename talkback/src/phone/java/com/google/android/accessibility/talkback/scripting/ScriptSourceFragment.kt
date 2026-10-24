@@ -24,7 +24,7 @@ import java.util.concurrent.Executors
 
 /**
  * The scripts in one source. Choosing a script downloads it and asks before installing, as Import
- * script does, listing the script's description, author, API versions and what it can do.
+ * script does, listing the script's description, author, the build it needs and what it can do.
  */
 open class ScriptSourceFragment : ScriptInstallFragment() {
   protected open val kind = SourceKind.SCRIPTS

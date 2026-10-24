@@ -112,6 +112,9 @@
         <ignore regexp="title_pref_selector_links_controls_web_only" />
         <ignore regexp="shortcut_scroll_to_top" />
         <ignore regexp="shortcut_scroll_to_bottom" />
+        <ignore regexp="script_needs_build" />
+        <ignore regexp="script_unsupported" />
+        <ignore regexp="script_min_build" />
         <ignore regexp="title_pref_notification_list" />
         <ignore regexp="title_pref_notification_parts" />
         <ignore regexp="notification_part_title" />
