@@ -67,20 +67,3 @@ android {
         }
     }
 }
-
-// Temporary CI-only hook: regenerate the canonical lint baseline on a working upstream runner and
-// include the generated file in the APK artifact. This block is removed before the PR is marked ready.
-tasks.register("captureGeneratedLintBaseline") {
-    doLast {
-        copy {
-            from file("lint-baseline.xml")
-            into file("${buildDir}/outputs/apk/baseline")
-            rename { "lint-baseline.xml.apk" }
-        }
-    }
-}
-
-tasks.matching { it.name == "assembleDebug" }.configureEach {
-    dependsOn("updateLintBaselinePhoneDebug")
-    finalizedBy("captureGeneratedLintBaseline")
-}
