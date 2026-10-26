@@ -25629,4 +25629,708 @@
 
 
 
+    <issue
+        id="MissingDefaultResource"
+        message="The color &quot;a11y_wear_material_color_primary&quot; in values-watch-v30 has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_primary&quot;>@android:color/system_neutral1_900&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="19"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="MissingDefaultResource"
+        message="The color &quot;a11y_wear_material_color_on_primary&quot; in values-watch-v30 has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_on_primary&quot;>@android:color/system_neutral1_50&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="20"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="MissingDefaultResource"
+        message="The color &quot;a11y_wear_material_color_primary_variant&quot; in values-watch-v30 has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_primary_variant&quot;>@android:color/system_accent1_600&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="21"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="MissingDefaultResource"
+        message="The color &quot;a11y_wear_material_color_secondary&quot; in values-watch-v30 has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_secondary&quot;>@android:color/system_neutral2_700&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="22"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="MissingDefaultResource"
+        message="The color &quot;a11y_wear_material_color_on_secondary&quot; in values-watch-v30 has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_on_secondary&quot;>@android:color/system_neutral2_200&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="23"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="MissingDefaultResource"
+        message="The color &quot;a11y_wear_material_color_secondary_variant&quot; in values-watch-v30 has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_secondary_variant&quot;>@android:color/system_neutral2_200&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="24"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="MissingDefaultResource"
+        message="The color &quot;a11y_wear_material_color_surface&quot; in values-watch-v30 has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_surface&quot;>@android:color/system_neutral1_10&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="25"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="MissingDefaultResource"
+        message="The color &quot;a11y_wear_material_color_on_surface&quot; in values-watch-v30 has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_on_surface&quot;>@android:color/system_neutral1_800&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="26"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="MissingDefaultResource"
+        message="The color &quot;a11y_wear_material_color_surface_variant&quot; in values-watch-v30 has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_surface_variant&quot;>@android:color/system_neutral1_800&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="27"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="MissingDefaultResource"
+        message="The color &quot;a11y_wear_material_color_background&quot; in values-watch-v30 has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_background&quot;>@color/google_black&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="28"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="MissingDefaultResource"
+        message="The color &quot;a11y_wear_material_color_on_background_wear&quot; in values-watch-v30 has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_on_background_wear&quot;>@color/google_white&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="29"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 34 (current min is 30): `MotionEventController`"
+        errorLine1="          new MotionEventController(this, pipeline.getFeedbackReturner(), getFeedbackController());"
+        errorLine2="          ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/marvin/talkback/TalkBackService.java"
+            line="62"
+            column="11"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 34 (current min is 30): `shutdown`"
+        errorLine1="      motionEventController.shutdown();"
+        errorLine2="                            ~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/marvin/talkback/TalkBackService.java"
+            line="79"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 34 (current min is 30): `onMotionEvent`"
+        errorLine1="      motionEventController.onMotionEvent(event);"
+        errorLine2="                            ~~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/marvin/talkback/TalkBackService.java"
+            line="127"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 34 (current min is 30): `dump`"
+        errorLine1="      motionEventController.dump(dumpLogger);"
+        errorLine2="                            ~~~~">
+        <location
+            file="src/wear/java/com/google/android/marvin/talkback/TalkBackService.java"
+            line="189"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="`@android:color/system_neutral1_900` requires API level 31 (current min is 30)"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_primary&quot;>@android:color/system_neutral1_900&lt;/color>"
+        errorLine2="                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="19"
+            column="52"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="`@android:color/system_neutral1_50` requires API level 31 (current min is 30)"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_on_primary&quot;>@android:color/system_neutral1_50&lt;/color>"
+        errorLine2="                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="20"
+            column="55"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="`@android:color/system_accent1_600` requires API level 31 (current min is 30)"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_primary_variant&quot;>@android:color/system_accent1_600&lt;/color>"
+        errorLine2="                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="21"
+            column="60"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="`@android:color/system_neutral2_700` requires API level 31 (current min is 30)"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_secondary&quot;>@android:color/system_neutral2_700&lt;/color>"
+        errorLine2="                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="22"
+            column="54"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="`@android:color/system_neutral2_200` requires API level 31 (current min is 30)"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_on_secondary&quot;>@android:color/system_neutral2_200&lt;/color>"
+        errorLine2="                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="23"
+            column="57"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="`@android:color/system_neutral2_200` requires API level 31 (current min is 30)"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_secondary_variant&quot;>@android:color/system_neutral2_200&lt;/color>"
+        errorLine2="                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="24"
+            column="62"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="`@android:color/system_neutral1_10` requires API level 31 (current min is 30)"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_surface&quot;>@android:color/system_neutral1_10&lt;/color>"
+        errorLine2="                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="25"
+            column="52"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="`@android:color/system_neutral1_800` requires API level 31 (current min is 30)"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_on_surface&quot;>@android:color/system_neutral1_800&lt;/color>"
+        errorLine2="                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="26"
+            column="55"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="`@android:color/system_neutral1_800` requires API level 31 (current min is 30)"
+        errorLine1="    &lt;color name=&quot;a11y_wear_material_color_surface_variant&quot;>@android:color/system_neutral1_800&lt;/color>"
+        errorLine2="                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/res/values-watch-v30/colors.xml"
+            line="27"
+            column="60"/>
+    </issue>
+
+    <issue
+        id="WearStandaloneAppFlag"
+        message="Missing `&lt;meta-data android:name=&quot;com.google.android.wearable.standalone&quot; ../>` element"
+        errorLine1="    &lt;application>"
+        errorLine2="     ~~~~~~~~~~~">
+        <location
+            file="src/wear/AndroidManifest.xml"
+            line="21"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getBoolean can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="        TypedArrayUtils.getBoolean("
+        errorLine2="                        ~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeCheckBoxPreference.kt"
+            line="53"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getBoolean can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="          R.styleable.ComposePreference_splitSummary,"
+        errorLine2="          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeCheckBoxPreference.kt"
+            line="55"
+            column="11"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getBoolean can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="          /* fallbackIndex= */ 0,"
+        errorLine2="                               ~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeCheckBoxPreference.kt"
+            line="56"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="Preference.performClick can only be called from within the same library group prefix (referenced groupId=`androidx.preference` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="                      performClick()"
+        errorLine2="                      ~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeCheckBoxPreference.kt"
+            line="77"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="Preference.performClick can only be called from within the same library group prefix (referenced groupId=`androidx.preference` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="              onCheckedChange = { performClick() },"
+        errorLine2="                                  ~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeCheckBoxPreference.kt"
+            line="86"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="Preference.performClick can only be called from within the same library group prefix (referenced groupId=`androidx.preference` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="            onCheckedChange = { performClick() },"
+        errorLine2="                                ~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeCheckBoxPreference.kt"
+            line="97"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getResourceId can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="      TypedArrayUtils.getResourceId("
+        errorLine2="                      ~~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeDialogPreference.kt"
+            line="47"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getResourceId can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="        R.styleable.DialogPreference_android_dialogIcon,"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeDialogPreference.kt"
+            line="49"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getResourceId can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="        R.styleable.DialogPreference_dialogIcon,"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeDialogPreference.kt"
+            line="50"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getResourceId can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="        /* defaultValue= */ 0,"
+        errorLine2="                            ~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeDialogPreference.kt"
+            line="51"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getString can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="      TypedArrayUtils.getString("
+        errorLine2="                      ~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeDialogPreference.kt"
+            line="63"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getString can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="        R.styleable.ComposeDialogPreference_edgeButtonText,"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeDialogPreference.kt"
+            line="65"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getString can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="        /* fallbackIndex= */ 0,"
+        errorLine2="                             ~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeDialogPreference.kt"
+            line="66"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getBoolean can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="      TypedArrayUtils.getBoolean("
+        errorLine2="                      ~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeDialogPreference.kt"
+            line="69"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getBoolean can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="        R.styleable.ComposeDialogPreference_disableOnDisplayPreferenceDialog,"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeDialogPreference.kt"
+            line="71"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getBoolean can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="        /* fallbackIndex= */ 0,"
+        errorLine2="                             ~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeDialogPreference.kt"
+            line="72"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="Preference.performClick can only be called from within the same library group prefix (referenced groupId=`androidx.preference` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="              performClick()"
+        errorLine2="              ~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeDialogPreference.kt"
+            line="96"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getBoolean can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="        TypedArrayUtils.getBoolean("
+        errorLine2="                        ~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposePreference.kt"
+            line="54"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getBoolean can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="          R.styleable.ComposePreference_splitSummary,"
+        errorLine2="          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposePreference.kt"
+            line="56"
+            column="11"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getBoolean can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="          /* fallbackIndex= */ 0,"
+        errorLine2="                               ~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposePreference.kt"
+            line="57"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="Preference.performClick can only be called from within the same library group prefix (referenced groupId=`androidx.preference` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="                    performClick()"
+        errorLine2="                    ~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposePreference.kt"
+            line="73"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="Preference.performClick can only be called from within the same library group prefix (referenced groupId=`androidx.preference` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="              onClick = { performClick() },"
+        errorLine2="                          ~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposePreference.kt"
+            line="81"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="Preference.performClick can only be called from within the same library group prefix (referenced groupId=`androidx.preference` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="            onClick = { performClick() },"
+        errorLine2="                        ~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposePreference.kt"
+            line="97"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="Preference.performClick can only be called from within the same library group prefix (referenced groupId=`androidx.preference` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="          onSelect = { performClick() },"
+        errorLine2="                       ~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeRadioPreference.kt"
+            line="51"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getBoolean can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="        TypedArrayUtils.getBoolean("
+        errorLine2="                        ~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeSwitchPreference.kt"
+            line="57"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getBoolean can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="          R.styleable.ComposePreference_splitSummary,"
+        errorLine2="          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeSwitchPreference.kt"
+            line="59"
+            column="11"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="TypedArrayUtils.getBoolean can only be called from within the same library group prefix (referenced groupId=`androidx.core` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="          /* fallbackIndex= */ 0,"
+        errorLine2="                               ~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeSwitchPreference.kt"
+            line="60"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="Preference.performClick can only be called from within the same library group prefix (referenced groupId=`androidx.preference` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="                      performClick()"
+        errorLine2="                      ~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeSwitchPreference.kt"
+            line="81"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="Preference.performClick can only be called from within the same library group prefix (referenced groupId=`androidx.preference` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="              onCheckedChange = { performClick() },"
+        errorLine2="                                  ~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeSwitchPreference.kt"
+            line="90"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="RestrictedApi"
+        message="Preference.performClick can only be called from within the same library group prefix (referenced groupId=`androidx.preference` with prefix androidx from groupId=`backtalk`)"
+        errorLine1="            onCheckedChange = { performClick() },"
+        errorLine2="                                ~~~~~~~~~~~~">
+        <location
+            file="src/wear/java/com/google/android/accessibility/material/preference/compose/ComposeSwitchPreference.kt"
+            line="109"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="MissingQuantity"
+        message="For locale &quot;iw&quot; (Hebrew) the following quantity should also be defined: `many` (e.g. &quot;20 שנה&quot;)"
+        errorLine1="  &lt;plurals name=&quot;template_containers&quot;>"
+        errorLine2="  ^">
+        <location
+            file="src/main/res/values-iw/strings_compositor.xml"
+            line="35"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="MissingQuantity"
+        message="For locale &quot;iw&quot; (Hebrew) the following quantity should also be defined: `many` (e.g. &quot;20 שנה&quot;)"
+        errorLine1="  &lt;plurals name=&quot;template_list_total_count&quot;>"
+        errorLine2="  ^">
+        <location
+            file="src/main/res/values-iw/strings_compositor.xml"
+            line="150"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="MissingQuantity"
+        message="For locale &quot;iw&quot; (Hebrew) the following quantity should also be defined: `many` (e.g. &quot;20 שנה&quot;)"
+        errorLine1="  &lt;plurals name=&quot;template_list_row_count&quot;>"
+        errorLine2="  ^">
+        <location
+            file="src/main/res/values-iw/strings_compositor.xml"
+            line="155"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="MissingQuantity"
+        message="For locale &quot;iw&quot; (Hebrew) the following quantity should also be defined: `many` (e.g. &quot;20 שנה&quot;)"
+        errorLine1="  &lt;plurals name=&quot;template_list_column_count&quot;>"
+        errorLine2="  ^">
+        <location
+            file="src/main/res/values-iw/strings_compositor.xml"
+            line="160"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="MissingQuantity"
+        message="For locale &quot;iw&quot; (Hebrew) the following quantity should also be defined: `many` (e.g. &quot;20 שנה&quot;)"
+        errorLine1="  &lt;plurals name=&quot;template_list_item_count&quot;>"
+        errorLine2="  ^">
+        <location
+            file="src/main/res/values-iw/strings_compositor.xml"
+            line="165"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="MissingQuantity"
+        message="For locale &quot;iw&quot; (Hebrew) the following quantity should also be defined: `many` (e.g. &quot;20 שנה&quot;)"
+        errorLine1="  &lt;plurals name=&quot;template_password_character_count&quot;>"
+        errorLine2="  ^">
+        <location
+            file="src/main/res/values-iw/strings_compositor.xml"
+            line="170"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="WearPasswordInput"
+        message="Don&apos;t ask Wear OS users for a password"
+        errorLine1="        InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD,"
+        errorLine2="                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/google/android/accessibility/talkback/actor/gemini/AiServicePreference.kt"
+            line="82"
+            column="48"/>
+    </issue>
+
+    <issue
+        id="WearPasswordInput"
+        message="Don&apos;t ask Wear OS users for a password"
+        errorLine1="        inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD"
+        errorLine2="                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/google/android/accessibility/talkback/actor/gemini/GeminiApiKeyPreference.kt"
+            line="71"
+            column="60"/>
+    </issue>
+
+    <issue
+        id="WearPasswordInput"
+        message="Don&apos;t ask Wear OS users for a password"
+        errorLine1="        inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD"
+        errorLine2="                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/google/android/accessibility/talkback/actor/gemini/GeminiApiKeyPreference.kt"
+            line="71"
+            column="60"/>
+    </issue>
+
 </issues>
