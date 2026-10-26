@@ -100,6 +100,43 @@ class DirectTouchPolicyTest {
   }
 
   @Test
+  fun nativeItemsOnScreenTurnWholeScreenOff() {
+    assertFalse(DirectTouchPolicy.shouldBeActive(base().copy(nativeItemsShowing = { true })))
+  }
+
+  @Test
+  fun nativeItemsDoNotTurnRegionModeOff() {
+    assertTrue(
+      DirectTouchPolicy.shouldBeActive(base().copy(regionMode = true, nativeItemsShowing = { true }))
+    )
+  }
+
+  @Test
+  fun nativeItemsAreOnlyLookedForWhenNothingElseDecides() {
+    var looks = 0
+    val input = base().copy(textFieldFocused = true, nativeItemsShowing = { looks++; false })
+    assertFalse(DirectTouchPolicy.shouldBeActive(input))
+    assertEquals(0, looks)
+  }
+
+  @Test
+  fun aGamesFocusableDrawingSurfaceIsNotANativeItem() {
+    // Constant Motion's whole screen is one SurfaceView that takes input focus and says nothing.
+    assertFalse(DirectTouchPolicy.isNativeItem(backtalkWouldFocus = true, label = null))
+    assertFalse(DirectTouchPolicy.isNativeItem(backtalkWouldFocus = true, label = ""))
+  }
+
+  @Test
+  fun aFocusableViewThatHasSomethingToSayIsANativeItem() {
+    assertTrue(DirectTouchPolicy.isNativeItem(backtalkWouldFocus = true, label = "Banana"))
+  }
+
+  @Test
+  fun aLabelWithoutFocusIsNotANativeItem() {
+    assertFalse(DirectTouchPolicy.isNativeItem(backtalkWouldFocus = false, label = "Banana"))
+  }
+
+  @Test
   fun everythingElseStillTurnsRegionModeOff() {
     val region = base().copy(regionMode = true)
     assertTrue(DirectTouchPolicy.shouldBeActive(region))
