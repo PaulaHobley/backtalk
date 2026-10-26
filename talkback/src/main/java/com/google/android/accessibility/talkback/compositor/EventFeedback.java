@@ -72,6 +72,18 @@ public abstract class EventFeedback {
    */
   public abstract int secondEarcon();
 
+  /**
+   * An earcon that says the item has more actions, played with the others, or -1 for none. It has
+   * no vibration, so the vibration of the other earcons is the one felt.
+   */
+  public abstract int actionsEarcon();
+
+  /**
+   * Whether the actions earcon plays after the speech has been spoken, instead of with the other
+   * earcons.
+   */
+  public abstract boolean actionsEarconAfterSpeech();
+
   /** Where on the screen the earcon comes from, from 0 at the left edge to 1, or -1 for nowhere. */
   public abstract double earconX();
 
@@ -159,6 +171,7 @@ public abstract class EventFeedback {
         StringBuilderUtils.optionalDouble("earconRate", earconRate(), 1.0d),
         StringBuilderUtils.optionalDouble("earconVolume", earconVolume(), 1.0d),
         StringBuilderUtils.optionalInt("secondEarcon", secondEarcon(), -1),
+        StringBuilderUtils.optionalInt("actionsEarcon", actionsEarcon(), -1),
         StringBuilderUtils.optionalDouble("earconX", earconX(), -1.0d),
         StringBuilderUtils.optionalDouble("earconY", earconY(), -1.0d),
         StringBuilderUtils.optionalTag("earconWithoutVibration", !earconVibrates()),
@@ -187,6 +200,8 @@ public abstract class EventFeedback {
         .setEarconRate(1.0d)
         .setEarconVolume(1.0d)
         .setSecondEarcon(-1)
+        .setActionsEarcon(-1)
+        .setActionsEarconAfterSpeech(false)
         .setEarconX(-1.0d)
         .setEarconY(-1.0d)
         .setEarconVibrates(true)
@@ -236,6 +251,10 @@ public abstract class EventFeedback {
     public abstract Builder setEarconVolume(double value);
 
     public abstract Builder setSecondEarcon(int value);
+
+    public abstract Builder setActionsEarcon(int value);
+
+    public abstract Builder setActionsEarconAfterSpeech(boolean value);
 
     public abstract Builder setEarconX(double value);
 

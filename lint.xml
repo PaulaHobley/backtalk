@@ -69,6 +69,9 @@
         <ignore regexp="individual_sound_direct_touch_exit" />
         <ignore regexp="individual_sound_wrap_forward" />
         <ignore regexp="individual_sound_wrap_back" />
+        <ignore regexp="individual_sound_actions_available" />
+        <ignore regexp="title_pref_actions_sound_timing" />
+        <ignore regexp="value_actions_sound_timing_" />
         <ignore regexp="theme_sound_none" />
         <ignore regexp="theme_sound_summary_no_sound" />
         <ignore regexp="theme_sound_action_set_none" />

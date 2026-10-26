@@ -48,6 +48,7 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Locale;
@@ -519,6 +520,37 @@ public class Compositor {
       return;
     }
 
+    // The actions earcon plays after the speech, if there is any and it is spoken to the end.
+    boolean actionsAfterSpeech =
+        eventFeedback.actionsEarcon() != -1
+            && eventFeedback.actionsEarconAfterSpeech()
+            && eventFeedback.ttsOutput().isPresent()
+            && !TextUtils.isEmpty(eventFeedback.ttsOutput().get());
+    if (actionsAfterSpeech) {
+      UtteranceCompleteRunnable spokenToTheEnd = runnable;
+      int actionsEarcon = eventFeedback.actionsEarcon();
+      float earconX = (float) eventFeedback.earconX();
+      float earconY = (float) eventFeedback.earconY();
+      runnable =
+          (status) -> {
+            if (spokenToTheEnd != null) {
+              spokenToTheEnd.run(status);
+            }
+            if (status == SpeechController.STATUS_SPOKEN) {
+              SpeakOptions actionsOptions = SpeakOptions.create();
+              actionsOptions.setEarcons(new LinkedHashSet<>(Collections.singleton(actionsEarcon)));
+              if (earconX >= 0 && earconY >= 0) {
+                Bundle position = new Bundle();
+                position.putFloat(Utterance.KEY_METADATA_EARCON_X, earconX);
+                position.putFloat(Utterance.KEY_METADATA_EARCON_Y, earconY);
+                actionsOptions.setNonSpeechParams(position);
+              }
+              actionsOptions.mFlags |= FeedbackItem.FLAG_NO_SPEECH;
+              speak("", eventId, actionsOptions);
+            }
+          };
+    }
+
     // Compose earcons.
     SpeakOptions speakOptions = null;
     int earcon = eventFeedback.earcon();
@@ -531,6 +563,9 @@ public class Compositor {
       earcons.add(earcon);
       if (eventFeedback.secondEarcon() != -1) {
         earcons.add(eventFeedback.secondEarcon());
+      }
+      if (eventFeedback.actionsEarcon() != -1 && !actionsAfterSpeech) {
+        earcons.add(eventFeedback.actionsEarcon());
       }
       speakOptions.setEarcons(earcons);
 

@@ -156,6 +156,12 @@
     <string name="theme_sound_not_audio">Backtalk can\'t play that file. Choose a WAV, OGG, MP3 or FLAC sound.</string>
     <!-- Theme sounds: message when the chosen file cannot be read. [CHAR LIMIT=NONE] -->
     <string name="theme_sound_failed">Backtalk couldn\'t read that file.</string>
+    <!-- Setting: when the actions available sound plays. [CHAR LIMIT=60] -->
+    <string name="title_pref_actions_sound_timing">Actions available sound</string>
+    <!-- Setting choice: the sound plays as the item gets focus. [CHAR LIMIT=60] -->
+    <string name="value_actions_sound_timing_focus">When the item gets focus</string>
+    <!-- Setting choice: the sound plays after the item has been spoken. [CHAR LIMIT=60] -->
+    <string name="value_actions_sound_timing_after_speech">After the item is spoken</string>
     <!-- Sound and vibration: choice of the sound theme in use. [CHAR LIMIT=50] -->
     <string name="title_pref_sound_scheme">Sound scheme</string>
     <!-- Sound and vibration: entry that opens the management of sound themes. [CHAR LIMIT=50] -->
