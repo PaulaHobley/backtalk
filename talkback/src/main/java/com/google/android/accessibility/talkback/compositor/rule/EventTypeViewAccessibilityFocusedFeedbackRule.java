@@ -212,8 +212,6 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
                         SharedPreferencesUtils.getSharedPreferences(context))
                 ? -1
                 : R.id.actions_available)
-        .setActionsEarconAfterSpeech(
-            ActionsSoundSettings.isAfterSpeech(SharedPreferencesUtils.getSharedPreferences(context)))
         .setEarconX(earconPosition == null ? -1 : earconPosition[0])
         .setEarconY(earconPosition == null ? -1 : earconPosition[1])
         .setEarconVibrates(earconVibrates)

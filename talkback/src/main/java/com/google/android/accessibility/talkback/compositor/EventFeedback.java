@@ -78,12 +78,6 @@ public abstract class EventFeedback {
    */
   public abstract int actionsEarcon();
 
-  /**
-   * Whether the actions earcon plays after the speech has been spoken, instead of with the other
-   * earcons.
-   */
-  public abstract boolean actionsEarconAfterSpeech();
-
   /** Where on the screen the earcon comes from, from 0 at the left edge to 1, or -1 for nowhere. */
   public abstract double earconX();
 
@@ -201,7 +195,6 @@ public abstract class EventFeedback {
         .setEarconVolume(1.0d)
         .setSecondEarcon(-1)
         .setActionsEarcon(-1)
-        .setActionsEarconAfterSpeech(false)
         .setEarconX(-1.0d)
         .setEarconY(-1.0d)
         .setEarconVibrates(true)
@@ -254,7 +247,6 @@ public abstract class EventFeedback {
 
     public abstract Builder setActionsEarcon(int value);
 
-    public abstract Builder setActionsEarconAfterSpeech(boolean value);
 
     public abstract Builder setEarconX(double value);
 

@@ -160,8 +160,6 @@
     <string name="title_pref_actions_sound_timing">Actions available sound</string>
     <!-- Setting choice: the sound plays as the item gets focus. [CHAR LIMIT=60] -->
     <string name="value_actions_sound_timing_focus">When the item gets focus</string>
-    <!-- Setting choice: the sound plays after the item has been spoken. [CHAR LIMIT=60] -->
-    <string name="value_actions_sound_timing_after_speech">After the item is spoken</string>
     <!-- Setting choice: the sound plays as the "Actions available" hint starts. [CHAR LIMIT=60] -->
     <string name="value_actions_sound_timing_hint">When the actions hint starts</string>
     <!-- Sound and vibration: choice of the sound theme in use. [CHAR LIMIT=50] -->

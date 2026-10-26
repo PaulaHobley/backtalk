@@ -20,21 +20,16 @@ import android.content.SharedPreferences
 
 /**
  * When the actions available sound plays for an item that has more actions: as the item gets focus,
- * as in current versions of iOS, or after the item has been spoken, as in older ones.
+ * as in current versions of iOS, or as the "Actions available" hint starts, as in older ones.
  */
 object ActionsSoundSettings {
   const val PREF_TIMING = "pref_actions_sound_timing"
   const val ON_FOCUS = "focus"
-  const val AFTER_SPEECH = "after_speech"
 
   const val WITH_HINT = "hint"
-
-  @JvmStatic
-  fun isAfterSpeech(prefs: SharedPreferences): Boolean =
-    prefs.getString(PREF_TIMING, ON_FOCUS) == AFTER_SPEECH
 
   /** The sound plays as the "Actions available" hint starts, not when the item gets focus. */
   @JvmStatic
   fun isWithHint(prefs: SharedPreferences): Boolean =
-    prefs.getString(PREF_TIMING, ON_FOCUS) == WITH_HINT
+    prefs.getString(PREF_TIMING, WITH_HINT) == WITH_HINT
 }

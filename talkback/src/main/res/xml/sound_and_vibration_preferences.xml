@@ -53,7 +53,7 @@
       android:title="@string/title_pref_control_sounds_speak_roles"
       android:summary="@string/summary_pref_control_sounds_speak_roles" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
-      android:defaultValue="focus"
+      android:defaultValue="hint"
       android:dialogTitle="@string/title_pref_actions_sound_timing"
       android:entries="@array/pref_actions_sound_timing_entries"
       android:entryValues="@array/pref_actions_sound_timing_values"
