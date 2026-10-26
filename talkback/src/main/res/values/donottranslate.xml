@@ -983,10 +983,12 @@
     <string-array name="pref_actions_sound_timing_entries">
       <item>@string/value_actions_sound_timing_focus</item>
       <item>@string/value_actions_sound_timing_after_speech</item>
+      <item>@string/value_actions_sound_timing_hint</item>
     </string-array>
     <string-array name="pref_actions_sound_timing_values">
       <item>focus</item>
       <item>after_speech</item>
+      <item>hint</item>
     </string-array>
 
     <string name="pref_rotor_step_degrees_key" translatable="false">pref_rotor_step_degrees</string>

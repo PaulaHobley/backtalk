@@ -208,6 +208,8 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
         .setSecondEarcon(secondEarcon)
         .setActionsEarcon(
             AccessibilityNodeInfoUtils.getCustomActions(srcNode).isEmpty()
+                    || ActionsSoundSettings.isWithHint(
+                        SharedPreferencesUtils.getSharedPreferences(context))
                 ? -1
                 : R.id.actions_available)
         .setActionsEarconAfterSpeech(

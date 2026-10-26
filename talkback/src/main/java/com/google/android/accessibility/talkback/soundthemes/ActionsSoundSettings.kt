@@ -27,7 +27,14 @@ object ActionsSoundSettings {
   const val ON_FOCUS = "focus"
   const val AFTER_SPEECH = "after_speech"
 
+  const val WITH_HINT = "hint"
+
   @JvmStatic
   fun isAfterSpeech(prefs: SharedPreferences): Boolean =
     prefs.getString(PREF_TIMING, ON_FOCUS) == AFTER_SPEECH
+
+  /** The sound plays as the "Actions available" hint starts, not when the item gets focus. */
+  @JvmStatic
+  fun isWithHint(prefs: SharedPreferences): Boolean =
+    prefs.getString(PREF_TIMING, ON_FOCUS) == WITH_HINT
 }
