@@ -138,6 +138,8 @@
         <ignore regexp="notification_list_next" />
         <ignore regexp="notification_list_group_count" />
         <ignore regexp="shortcut_system_notifications" />
+        <ignore regexp="image_qna_button_text_ai" />
+        <ignore regexp="image_qna_typing_button_text_ai" />
     </issue>
     <!--
       R8 minifies the published builds, but their resources aren't shrunk, since the compositor,
