@@ -195,6 +195,10 @@ public class TalkBackPreferenceFilter {
     // A TV has no notification shade for Backtalk's list to replace.
     NOTIFICATION_LIST(R.string.pref_notification_list_key, HIDDEN_ON_TV),
     NOTIFICATION_PARTS(R.string.pref_notification_parts_key, HIDDEN_ON_TV),
+    RESTORE_FOCUS(
+        R.string.pref_restore_focus_on_back_key, HIDDEN_ON_TV | HIDDEN_ON_WATCH),
+    RESTORE_FOCUS_SCROLL(
+        R.string.pref_scroll_to_restore_previous_focus_key, HIDDEN_ON_TV | HIDDEN_ON_WATCH),
     SPEECH_VOLUME(R.string.pref_speech_volume_key, HIDE_HAS_VOLUME_KEY),
     BRAILLE_KEYBOARD(
         R.string.pref_brailleime_key,
