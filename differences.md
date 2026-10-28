@@ -592,6 +592,10 @@ Google's source release doesn't include working Gemini support, so without an AP
 
 Backtalk can describe images and screens with a model that runs on your phone, so nothing is sent to Google or anyone else. For more information, see [On-device AI](README.md#on-device-ai).
 
+### Text in images without Google Play services
+
+TalkBack reads text in images with the ML Kit that runs inside Google Play services. On phones without Play services, such as GrapheneOS without sandboxed Google Play, **Describe image** can't read any text. For those phones, install `backtalk-nogms.apk` from the [dev release](https://github.com/trypsynth/backtalk/releases/tag/dev) instead of `backtalk.apk`. It includes the text recognition model, so it reads text with or without Play services, and it only updates to builds of its own kind. The model is built for all three processor types, so this APK is about 30 MB larger. Both are the same app, so you can install one over the other. TalkBack also sends ML Kit's usage log to Google, and Backtalk doesn't.
+
 ### Clear error messages
 
 When Gemini can't describe something, TalkBack says "Something went wrong". Backtalk says what failed: the key wasn't accepted, the usage limit was reached, Gemini is busy, Gemini took too long, or there's no internet connection. For other errors, Backtalk says the error code and the first sentence of Google's message, in English. Describe screen speaks its errors instead of showing them in a toast.
