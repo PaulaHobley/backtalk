@@ -1008,6 +1008,9 @@ public class TalkBackService extends AccessibilityServiceCompat
       audioDeviceRouter = null;
     }
 
+    if (focuser != null) {
+      focuser.shutdown();
+    }
     if (passThroughModeActor != null) {
       passThroughModeActor.onDestroy();
     }
@@ -2298,6 +2301,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     HintEventInterpreter hintEventInterpreter = new HintEventInterpreter(this);
 
     passThroughModeActor = new PassThroughModeActor(this);
+    focuser.enableDirectClick(
+        this::isReadyForDirectClick, passThroughModeActor.state::passesThrough);
     speechRateAndPitchActor = new SpeechRateAndPitchActor(this);
     ttsLogger = new TtsLogger(analytics, speechRateAndPitchActor.rateState);
 
@@ -4511,6 +4516,11 @@ public class TalkBackService extends AccessibilityServiceCompat
       touchInteractionMonitor.setMultiFingerGesturesEnabled(true);
       touchInteractionMonitor.setTwoFingerPassthroughEnabled(true);
       touchInteractionMonitor.setServiceHandlesDoubleTap(true);
+      if (FeatureSupport.supportGestureDetection()
+          && display.getDisplayId() == Display.DEFAULT_DISPLAY) {
+        // A direct click touches the main display, and its gesture detection hands the touch on.
+        touchInteractionMonitor.setDirectClick(focuser.getDirectClick());
+      }
       // No executor: the controller calls the monitor on the main thread as each event comes in, in
       // order with the timeouts that gesture detection counts there.
       touchInteractionController.registerCallback(/* executor= */ null, touchInteractionMonitor);
@@ -4518,6 +4528,19 @@ public class TalkBackService extends AccessibilityServiceCompat
       userInterface.registerListener(touchInteractionMonitor);
       LogUtils.i(TAG, "Enabling service gesture detection on display %d", display.getDisplayId());
     }
+  }
+
+  /**
+   * Whether a direct click can press now. Only gesture detection on the main display can tell, as
+   * only it can hand the press to the app.
+   */
+  private boolean isReadyForDirectClick() {
+    if (!FeatureSupport.supportGestureDetection()) {
+      return false;
+    }
+    TouchInteractionMonitor touchInteractionMonitor =
+        displayIdToTouchInteractionMonitors.get(Display.DEFAULT_DISPLAY);
+    return touchInteractionMonitor != null && touchInteractionMonitor.isReadyForDirectClick();
   }
 
   /**
