@@ -153,6 +153,8 @@
         <ignore regexp="shortcut_system_notifications" />
         <ignore regexp="image_qna_button_text_ai" />
         <ignore regexp="image_qna_typing_button_text_ai" />
+        <ignore regexp="title_pref_suppress_extra_screen_on_speech" />
+        <ignore regexp="summary_pref_suppress_extra_screen_on_speech" />
         <ignore regexp="title_pref_direct_click" />
         <ignore regexp="summary_pref_direct_click" />
     </issue>
