@@ -1132,6 +1132,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     return (diff & screenConfigFlags) != 0;
   }
 
+  private final com.google.android.accessibility.talkback.eventprocessor.PageTurnMonitor
+      pageTurnMonitor = new com.google.android.accessibility.talkback.eventprocessor.PageTurnMonitor();
+
   @Override
   public void onAccessibilityEvent(AccessibilityEvent event) {
     if (screenOnSpeechSuppression != null) {
@@ -1151,6 +1154,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     Performance perf = Performance.getInstance();
     EventId eventId = perf.onEventReceived(event);
+    if (pageTurnMonitor.onEvent(event) && pipeline != null) {
+      pipeline.getFeedbackReturner().returnFeedback(eventId, Feedback.sound(R.raw.page_turn));
+    }
     if (screenFocusRestorer != null) {
       screenFocusRestorer.onAccessibilityEvent(event);
     }
@@ -1935,6 +1941,15 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     SharedPreferencesUtils.migrateSharedPreferences(this);
     prefs = SharedPreferencesUtils.getSharedPreferences(this);
+    if (!prefs.getBoolean("page_turn_swipes_configured", false)) {
+      prefs.edit()
+          .putString(getString(R.string.pref_shortcut_3finger_swipe_right_key),
+              getString(R.string.shortcut_value_scroll_forward))
+          .putString(getString(R.string.pref_shortcut_3finger_swipe_left_key),
+              getString(R.string.shortcut_value_scroll_back))
+          .putBoolean("page_turn_swipes_configured", true)
+          .apply();
+    }
 
     if (FeatureFlagReader.usePeriodAsSeparator(getBaseContext())) {
       CompositorUtils.usePeriodAsSeparator();

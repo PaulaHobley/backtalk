@@ -1737,8 +1737,8 @@
     <string name="pref_shortcut_2finger_swipe_right_default">@string/shortcut_value_scroll_right</string>
     <string name="pref_shortcut_3finger_swipe_up_default">@string/shortcut_value_select_previous_setting</string>
     <string name="pref_shortcut_3finger_swipe_down_default">@string/shortcut_value_select_next_setting</string>
-    <string name="pref_shortcut_3finger_swipe_left_default">@string/shortcut_value_select_previous_setting</string>
-    <string name="pref_shortcut_3finger_swipe_right_default">@string/shortcut_value_select_next_setting</string>
+    <string name="pref_shortcut_3finger_swipe_left_default">@string/shortcut_value_scroll_back</string>
+    <string name="pref_shortcut_3finger_swipe_right_default">@string/shortcut_value_scroll_forward</string>
     <string name="pref_shortcut_4finger_swipe_up_default">@string/shortcut_value_previous_window</string>
     <string name="pref_shortcut_4finger_swipe_down_default">@string/shortcut_value_next_window</string>
     <string name="pref_shortcut_4finger_swipe_left_default">@string/shortcut_value_prev_container</string>
