@@ -189,7 +189,7 @@ brltty_initialize (const char* driverCode, const char* brailleDevice,
 
   logMessage(LOG_NOTICE, "Successfully initialized braille driver "
              "%s on device %s", driverCode, brailleDevice);
-  // Focus over classic Bluetooth can enter a slow sniff mode between pans.
+  // Limit idle refreshes to Focus displays connected over classic Bluetooth.
   // Use the driver's normal acknowledged write path, never replay raw packets.
   idleKeepalive.enabled = !strcmp(driverCode, "fs") &&
       !strncmp(brailleDevice, "bluetooth:", 10) &&
@@ -332,7 +332,12 @@ brltty_writeWindow(unsigned char *dotPattern, size_t patternSize) {
   if (patternSize < bufSize) {
     memset(brailleDisplay.buffer + patternSize, 0, bufSize - patternSize);
   }
-  return braille->writeWindow(&brailleDisplay, NULL);
+  int result = braille->writeWindow(&brailleDisplay, NULL);
+  if (result) {
+    // Normal output postpones the idle refresh without extending the session.
+    idleKeepalive.lastWrite = monotonicMillis();
+  }
+  return result;
 }
 
 

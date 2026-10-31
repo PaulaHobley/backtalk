@@ -4,7 +4,7 @@
 
 #include <stdint.h>
 
-/* Below the five-second RFCOMM idle timeout observed on Samsung. Only user
+/* Refresh after three seconds without output during a reading session. Only user
  * commands extend the reading session; acknowledgements and refreshes do not. */
 #define IDLE_KEEPALIVE_INTERVAL_MS 3000
 #define IDLE_KEEPALIVE_SESSION_MS 60000
